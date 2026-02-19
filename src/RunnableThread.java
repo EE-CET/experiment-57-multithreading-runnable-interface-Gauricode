@@ -1,12 +1,22 @@
 class MyRunnable implements Runnable {
-    // TODO: Override run() method
+    // Override run() method
     // Loop from 1 to 5 and print numbers separated by space
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.print(i + " ");
+        }
+    }
 }
 
 public class RunnableThread {
     public static void main(String[] args) {
-        // TODO: Create an instance of MyRunnable
-        // TODO: Create a Thread object passing the runnable instance
-        // TODO: Start the thread
+        // Create an instance of MyRunnable
+        MyRunnable obj1 = new MyRunnable();
+
+        // Create a Thread object passing the runnable instance
+        Thread t1 = new Thread(obj1);
+
+        // Start the thread
+        t1.start();
     }
 }
